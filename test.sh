@@ -1,5 +1,6 @@
 #!/bin/bash
 
+'Set the main variables'
 YELLOW="\033[133m"
 GREEN="\033[032m"
 RESET="\033[0m"
@@ -531,6 +532,16 @@ setupDashboard() {
 : 'Finalize'
 finalizeSetup() {
 	echo -e "[$GREEN+$RESET] Finishing up.."
+	displayLogo
 	source "$HOME"/.bashrc || return
 	echo -e "[$GREEN+$RESET] Installation script finished! "
 }
+
+: 'Execute the main functions'
+displayLogo
+basicRequirements
+golangInstall
+golangTools
+additionalTools
+setupDashboard
+finalizeSetup
