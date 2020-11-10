@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#'Set the main variables'
 YELLOW="\033[133m"
 GREEN="\033[032m"
 RESET="\033[0m"
