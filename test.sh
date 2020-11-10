@@ -162,23 +162,23 @@ golangTools() {
 	GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 	echo -e "[$GREEN+$RESET] Done."
 
-    echo -e "[$GREEN+$RESET] Installing cf-check"
+    	echo -e "[$GREEN+$RESET] Installing cf-check"
 	go get -u github.com/dwisiswant0/cf-check
 	echo -e "[$GREEN+$RESET] Done."
 
-    echo -e "[$GREEN+$RESET] Installing dalfox"
+    	echo -e "[$GREEN+$RESET] Installing dalfox"
 	GO111MODULE=on go get -u -v github.com/hahwul/dalfox
 	echo -e "[$GREEN+$RESET] Done."
 
-    echo -e "[$GREEN+$RESET] Installing hakrawler"
+    	echo -e "[$GREEN+$RESET] Installing hakrawler"
 	go get -u -v github.com/hakluke/hakrawler
 	echo -e "[$GREEN+$RESET] Done."
 
-    echo -e "[$GREEN+$RESET] Installing naabu"
+    	echo -e "[$GREEN+$RESET] Installing naabu"
 	GO111MODULE=on go get -u -v github.com/projectdiscovery/naabu/v2/cmd/naabu
 	echo -e "[$GREEN+$RESET] Done."
 
-    echo -e "[$GREEN+$RESET] Installing chaos"
+    	echo -e "[$GREEN+$RESET] Installing chaos"
 	GO111MODULE=on go get -u github.com/projectdiscovery/chaos-client/cmd/chaos
 	echo -e "[$GREEN+$RESET] Done."
 
@@ -194,9 +194,26 @@ golangTools() {
 	go get -u github.com/dwisiswant0/slackcat
 	echo -e "[$GREEN+$RESET] Done."
 
-    echo -e "[$GREEN+$RESET] Installing github-subdomains"
+    	echo -e "[$GREEN+$RESET] Installing github-subdomains"
 	go get -u github.com/gwen001/github-subdomains
 	echo -e "[$GREEN+$RESET] Done."
+
+	echo -e "[$GREEN+$RESET] Installing Webscreenshots"
+	pip install webscreenshot
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing ASNIP"
+	go get -v github.com/harleo/asnip
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing KXSS"
+	go get github.com/Emoe/kxss
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing WURL"
+	go get -u github.com/bp0lr/wurl
+	echo -e "[$GREEN+$RESET] Done."
+	
 }
 
 : 'Additional tools'
@@ -221,7 +238,11 @@ additionalTools() {
 	echo -e "[$GREEN+$RESET] Installing jq.."
 	sudo apt install -y jq
 	echo -e "[$GREEN+$RESET] Done."
-
+	
+	echo -e "[$GREEN+$RESET] Installing parallel"
+	apt install -y parallel
+	echo -e "[$GREEN+$RESET] Done."
+	
 	echo -e "[$GREEN+$RESET] Installing Chromium browser.."
 	sudo apt install -y chromium-browser
 	echo -e "[$GREEN+$RESET] Done."
@@ -371,8 +392,135 @@ additionalTools() {
 	git clone https://github.com/FortyNorthSecurity/EyeWitness.git
 	sudo bash "$HOME"/tools/EyeWitness/Python/setup/setup.sh
 	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing Asnlookup"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/yassineaboukir/Asnlookup
+	cd Asnlookup
+	pip3 install -r requirements.txt
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing SEE-SURF"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/In3tinct/See-SURF.git
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing the-Harvester"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/laramies/theHarvester
+	cd theHarvester
+	If developing do:
+		python3 -m pip install -r requirements/dev.txt
+	Else:
+		python3 -m pip install -r requirements/base.txt
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing Sublist3r"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/aboul3la/Sublist3r.git
+	cd Sublist3r
+	pip install -r requirements.txt
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing JhD Domain"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/jhaddix/domain.git
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing cloudflare_enum"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/mandatoryprogrammer/cloudflare_enum.git
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing SUB"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/cihanmehmet/sub.sh.git
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing LiveTargetFinder"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/allyomalley/LiveTargetsFinder.git
+	cd LiveTargetsFinder
+	pip3 install -r requirements.txt
+	chmod +x install_deps.sh
+	./install_deps.sh
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing ParamSpider"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/devanshbatham/ParamSpider
+	cd ParamSpider
+	pip3 install -r requirements.txt
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing XSSstrike"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/s0md3v/XSStrike.git
+	cd XSStrike
+	pip3 install -r requirements.txt 
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing DNSCewl"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/codingo/DNSCewl.git
+	cd DNSCewl
+	mv DNScewl /usr/bin
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing Payloads"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/foospidy/payloads.git
+	cd payloads
+	./get.sh
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing Brutespray"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/x90skysn3k/brutespray.git
+	cd brutespray
+	pip install -r requirements.txt
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing BlindCrawler"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/AhmedConstant/BlindCrawler.git
+	cd BlindCrawler
+	pip3 install -r requirements.txt
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing Secret Finder(JS)"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/m4ll0k/SecretFinder.git
+	cd SecretFinder
+	pip3 install -r requirements.txt
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing AutoRecon"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/Tib3rius/AutoRecon.git
+	cd AutoRecon
+	pip3 install -r requirements.txt
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing Smuggler"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/defparam/smuggler.git
+	cd smuggler
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing Bug-Bounty-Tools"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/m4ll0k/Bug-Bounty-Toolz.git
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing DNS-Recon"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/darkoperator/dnsrecon.git
+	cd dnsrecon
+	pip3 install -r requirements.txt
+	echo -e "[$GREEN+$RESET] Done."
+	
 }
-
 : 'Dashboard setup'
 setupDashboard() {
 	echo -e "[$GREEN+$RESET] Installing Nginx.."
@@ -384,16 +532,6 @@ setupDashboard() {
 : 'Finalize'
 finalizeSetup() {
 	echo -e "[$GREEN+$RESET] Finishing up.."
-	displayLogo
 	source "$HOME"/.bashrc || return
 	echo -e "[$GREEN+$RESET] Installation script finished! "
 }
-
-: 'Execute the main functions'
-displayLogo
-basicRequirements
-golangInstall
-golangTools
-additionalTools
-setupDashboard
-finalizeSetup
