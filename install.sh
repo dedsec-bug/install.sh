@@ -467,11 +467,25 @@ additionalTools() {
 	mv DNScewl /usr/bin
 	echo -e "[$GREEN+$RESET] Done."
 	
+	echo -e "[$GREEN+$RESET] Installing byp4xx"
+	cd "$HOME"/tools/ || return 
+	git clone https://github.com/lobuhi/byp4xx.git
+	cd byp4xx
+	chmod u+x byp4xx.sh
+	echo -e "[$GREEN+$RESET] Done."
+	
 	echo -e "[$GREEN+$RESET] Installing Payloads"
 	cd "$HOME"/tools/ || return
 	git clone https://github.com/foospidy/payloads.git
 	cd payloads
 	./get.sh
+	echo -e "[$GREEN+$RESET] Done."
+	
+	echo -e "[$GREEN+$RESET] Installing bypass-403"
+	cd "$HOME"/tools/ || return
+	git clone https://github.com/iamj0ker/bypass-403
+	cd bypass-403
+	chmod +x bypass-403.sh
 	echo -e "[$GREEN+$RESET] Done."
 	
 	echo -e "[$GREEN+$RESET] Installing Brutespray"
